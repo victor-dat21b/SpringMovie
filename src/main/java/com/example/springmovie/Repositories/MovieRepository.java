@@ -13,12 +13,17 @@ public class MovieRepository {
     //findAll
 
 
-    public void findAll(){
+    public String findAll(){
         try {
             File file = new ClassPathResource("imdb-data.csv").getFile();
             Scanner myScanner = new Scanner(file);
             while (myScanner.hasNextLine()){
-                System.out.println(myScanner.next());
+                String[] myStrings = myScanner.next().split(";");
+                if (!myStrings[0].equals("Year")){
+
+                }
+
+
             }
 
 
@@ -26,7 +31,7 @@ public class MovieRepository {
             System.out.println("Error reading file" + e);
 
         }
-
+        return " ";
 
     }
 }

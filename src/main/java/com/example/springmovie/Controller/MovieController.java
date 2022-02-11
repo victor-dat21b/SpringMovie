@@ -1,6 +1,7 @@
 package com.example.springmovie.Controller;
 
 
+import com.example.springmovie.Repositories.MovieRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,4 +12,12 @@ public class MovieController {
     public String index(){
         return "forklaring på siden";
     }
+
+
+    @GetMapping("/findall")
+    public String findall(){
+        MovieRepository movieR = new MovieRepository();
+        return movieR.findAll();
+    }
+
 }
